@@ -142,6 +142,9 @@ CORS_ALLOWED_ORIGINS = [
     if origin.strip()
 ]
 
+
+CORS_ALLOW_CREDENTIALS = True
+
 # Keep CSRF protection enabled.
 # Add the actual HTTPS frontend origin to CSRF_TRUSTED_ORIGINS
 # when the deployed frontend is known.
@@ -164,8 +167,9 @@ SPECTACULAR_SETTINGS = {
 
 
 CSRF_TRUSTED_ORIGINS = [
+    "http://192.168.29.137:8080",
+    "http://127.0.0.1:8080",
     "http://localhost:8080",
-    "http://192.168.29.137:8080/",
 ]
 
 CSRF_COOKIE_HTTPONLY = False
