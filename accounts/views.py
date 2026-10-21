@@ -37,14 +37,6 @@ def serialize_user(user):
     }
 
 
-@require_GET
-@ensure_csrf_cookie
-def csrf_token(request):
-    return JsonResponse({"detail": "CSRF cookie initialized."})
-
-
-
-
 
 def session_payload(user, request):
     expiry_date = request.session.get_expiry_date()

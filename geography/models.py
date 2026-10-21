@@ -50,6 +50,10 @@ class Ward(models.Model):
                 fields=["panchayath", "number"],
                 name="unique_ward_number_per_panchayath",
             ),
+            models.CheckConstraint(
+                condition=models.Q(number__gte=1),
+                name="ward_number_at_least_one",
+            ),
         ]
 
     def __str__(self):
