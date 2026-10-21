@@ -16,7 +16,7 @@ ALLOWED_HOSTS = [
     host.strip()
     for host in os.getenv(
         "DJANGO_ALLOWED_HOSTS",
-        "localhost,127.0.0.1",
+        "localhost,192.168.29.137:8080/",
     ).split(",")
     if host.strip()
 ]
@@ -137,7 +137,7 @@ CORS_ALLOWED_ORIGINS = [
     origin.strip()
     for origin in os.getenv(
         "FRONTEND_ORIGIN",
-        "http://localhost:3000",
+        "http://localhost:8080",
     ).split(",")
     if origin.strip()
 ]
@@ -164,8 +164,8 @@ SPECTACULAR_SETTINGS = {
 
 
 CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:3000",
-    "http://127.0.0.1:3000",
+    "http://localhost:8080",
+    "http://192.168.29.137:8080/",
 ]
 
 CSRF_COOKIE_HTTPONLY = False
